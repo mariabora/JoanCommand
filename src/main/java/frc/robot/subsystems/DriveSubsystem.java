@@ -18,9 +18,9 @@ public class DriveSubsystem extends SubsystemBase {
   private CANSparkMax m_right;
   private CANSparkMax m_rightSlave;
   private static final int leftDeviceID = 1; 
-  private static final int rightDeviceID = 2;
-  private static final int leftDeviceID2 = 3; 
-  private static final int rightDeviceID2 = 4;
+  private static final int rightDeviceID = 4;
+  private static final int leftDeviceID2 = 2; 
+  private static final int rightDeviceID2 = 3;
   private final DifferentialDrive m_drive;
 
   /** Creates a new ExampleSubsystem. */
