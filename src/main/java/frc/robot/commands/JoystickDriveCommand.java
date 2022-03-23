@@ -5,35 +5,50 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.DriveSubsystem;
+
+import javax.swing.text.Position;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class ExampleCommand extends CommandBase {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final DriveSubsystem m_subsystem;
-
+public class JoystickDriveCommand extends CommandBase {
+  @SuppressWarnings({ "PMD.UnusedPrivateField", "PMD.SingularField" })
+  private final DriveSubsystem m_driveSubsystem;
+  private final Joystick m_joystick;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ExampleCommand(DriveSubsystem subsystem) {
-    m_subsystem = subsystem;
+  public JoystickDriveCommand(DriveSubsystem subsystem, Joystick joystick) {
+    m_driveSubsystem = subsystem;
+    m_joystick = joystick;
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
+    addRequirements(m_driveSubsystem);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    double x, y;
+    x = m_joystick.getX();
+    y = m_joystick.getY();
+
+    m_driveSubsystem.position(x, y);
+
+   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+  }
 
   // Returns true when the command should end.
   @Override
