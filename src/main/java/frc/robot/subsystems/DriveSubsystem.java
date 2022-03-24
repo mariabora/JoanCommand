@@ -7,9 +7,7 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveSubsystem extends SubsystemBase {
@@ -28,12 +26,16 @@ public class DriveSubsystem extends SubsystemBase {
 
     m_left = new CANSparkMax(leftDeviceID, MotorType.kBrushless);
     m_leftSlave = new CANSparkMax(leftDeviceID2, MotorType.kBrushless);
-    m_leftSlave.follow(m_left);
-
-
-
     m_right = new CANSparkMax(rightDeviceID, MotorType.kBrushless);
     m_rightSlave = new CANSparkMax(rightDeviceID2, MotorType.kBrushless);
+
+    m_left.restoreFactoryDefaults();
+    m_right.restoreFactoryDefaults();
+    m_leftSlave.restoreFactoryDefaults();
+    m_rightSlave.restoreFactoryDefaults();
+
+
+    m_leftSlave.follow(m_left);
     m_rightSlave.follow(m_right);
      
 
@@ -45,7 +47,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   }
   public void position(double x, double y) {
-    m_drive.arcadeDrive(y, x);
+    m_drive.arcadeDrive(y / 2, x / 2);
   }
 
   @Override
@@ -58,6 +60,15 @@ public class DriveSubsystem extends SubsystemBase {
     m_right.set(rightSpeed);
 
       }
+
+  public void stop() {
+        m_drive.arcadeDrive(0, 0);
+      }
+
+  public void backupSlowly() {
+    m_drive.arcadeDrive( -.3, 0);
+  }
+
   @Override
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation

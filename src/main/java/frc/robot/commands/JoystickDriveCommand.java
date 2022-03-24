@@ -6,10 +6,7 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.DriveSubsystem;
 
-import javax.swing.text.Position;
-
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
@@ -39,7 +36,7 @@ public class JoystickDriveCommand extends CommandBase {
   public void execute() {
     double x, y;
     x = m_joystick.getX();
-    y = m_joystick.getY();
+    y = -m_joystick.getY();
 
     m_driveSubsystem.position(x, y);
 

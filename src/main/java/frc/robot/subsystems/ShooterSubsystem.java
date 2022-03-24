@@ -7,28 +7,62 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ShooterSubsystem extends SubsystemBase {
 
-    private VictorSPX m_shooterAngle;
-    private static int angleDeviceID = 6;
-    private VictorSPX m_shooterWheels;
-    private static int wheelsDeviceID = 7;
+    private VictorSPX m_aimMotor;
+    private static int aimerDeviceID = 1;
+    private VictorSPX m_flyWheel;
+    private static int flywheelDeviceID = 3;
+    private VictorSPX m_feederMotor;
+    private static int feederDeviceID = 4;
  //encoder???
     public ShooterSubsystem() {
 
-        m_shooterAngle = new VictorSPX(angleDeviceID);
-        m_shooterAngle.set(VictorSPXControlMode.PercentOutput, 0);
-        m_shooterWheels = new VictorSPX(wheelsDeviceID);
-        m_shooterWheels.set(VictorSPXControlMode.PercentOutput, 0);
+        m_aimMotor = new VictorSPX(aimerDeviceID);
+        m_feederMotor = new VictorSPX(feederDeviceID);
+        m_flyWheel = new VictorSPX(flywheelDeviceID);
+
+        m_flyWheel.configFactoryDefault();
+        m_feederMotor.configFactoryDefault();
+        m_aimMotor.configFactoryDefault();
+
+        stop();
 
 
     }
 
-    public void setAngle(double speed) {
-        m_shooterAngle.set(VictorSPXControlMode.PercentOutput, speed);
+    public void setAim(double speed) {
+        m_aimMotor.set(VictorSPXControlMode.PercentOutput, speed);
 
     }    
     
-    public void setWheels(double speed) {
-        m_shooterWheels.set(VictorSPXControlMode.PercentOutput, speed);
+    public void setFlyWheel(double speed) {
+        m_flyWheel.set(VictorSPXControlMode.PercentOutput, speed);
+    }
+
+    public void setFeeder(double speed){
+        m_feederMotor.set(VictorSPXControlMode.PercentOutput, speed);
+
+    }
+
+    public void stop(){
+        setFeeder(0);
+        setFlyWheel(0);
+        setAim(0);
+    }
+
+    public void startFlywheel() {
+        setFlyWheel(0.9);
+    }
+
+    public void feedBall() {
+        setFeeder(-1);
+    }
+
+    public void aimBack() {
+        setAim(-.3);
+    }
+
+    public void aimForward() {
+        setAim(.3);
     }
 
 }
