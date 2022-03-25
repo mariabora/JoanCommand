@@ -47,7 +47,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   }
   public void position(double x, double y) {
-    m_drive.arcadeDrive(y / 2, x / 2);
+    m_drive.arcadeDrive(y, x);
   }
 
   @Override
@@ -65,8 +65,8 @@ public class DriveSubsystem extends SubsystemBase {
         m_drive.arcadeDrive(0, 0);
       }
 
-  public void backupSlowly() {
-    m_drive.arcadeDrive( -.3, 0);
+  public void forwardSlowly() {
+    m_drive.arcadeDrive( .3, 0);
   }
 
   @Override

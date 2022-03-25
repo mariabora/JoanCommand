@@ -50,7 +50,7 @@ public class ShooterSubsystem extends SubsystemBase {
     }
 
     public void startFlywheel() {
-        setFlyWheel(0.9);
+        setFlyWheel(0.85);
     }
 
     public void feedBall() {

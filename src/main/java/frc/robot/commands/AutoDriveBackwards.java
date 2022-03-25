@@ -28,7 +28,7 @@ public class AutoDriveBackwards extends SequentialCommandGroup {
     addCommands( 
       new ShootBall(shooterSubsystem),
       new InstantCommand( m_shooterSubsystem::stop, m_shooterSubsystem),
-      new RunCommand( m_driveSubsystem::backupSlowly, m_driveSubsystem ).withTimeout(3),
+      new RunCommand( m_driveSubsystem::forwardSlowly, m_driveSubsystem ).withTimeout(5),
       new RunCommand( m_driveSubsystem::stop, m_driveSubsystem )
 
     );

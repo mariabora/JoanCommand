@@ -76,15 +76,15 @@ public class RobotContainer {
       new RunCommand( m_IntakeSubsystem::drop, m_IntakeSubsystem)
     );
  
-    new JoystickButton(m_Controller, XboxController.Button.kX.value).whenHeld(
+    //.new JoystickButton(m_Controller, XboxController.Button.kX.value).whenHeld(
       
-      new RunCommand( m_shooterSubsystem::aimBack, m_shooterSubsystem)
-    );
+      //new RunCommand( m_shooterSubsystem::aimBack, m_shooterSubsystem)
+    //);
 
-    new JoystickButton(m_Controller, XboxController.Button.kY.value).whenHeld(
+   // new JoystickButton(m_Controller, XboxController.Button.kY.value).whenHeld(
       
-      new RunCommand( m_shooterSubsystem::aimForward, m_shooterSubsystem)
-    );
+     // new RunCommand( m_shooterSubsystem::aimForward, m_shooterSubsystem)
+   // );
 
   }
 
