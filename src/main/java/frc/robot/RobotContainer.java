@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.AutoDriveBackwards;
+import frc.robot.commands.HoldBall;
 import frc.robot.commands.JoystickDriveCommand;
 import frc.robot.commands.ShootBall;
 import frc.robot.commands.StartIntake;
@@ -41,6 +42,8 @@ public class RobotContainer {
 
   private final Command m_autoCommand = new AutoDriveBackwards(m_driveSubsystem , m_shooterSubsystem);
 
+  
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
 
@@ -63,8 +66,11 @@ public class RobotContainer {
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.whenHeld( new StartIntake(m_IntakeSubsystem)  );
 
-    JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
-    buttonX.whenHeld(new StartIntake(m_IntakeSubsystem));
+    //JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
+    //buttonX.whenHeld(new StartIntake(m_IntakeSubsystem));
+
+    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kY.value);
+    buttonY.whenPressed(new HoldBall(m_shooterSubsystem));
 
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kB.value);
     buttonB.whenPressed( new ShootBall(m_shooterSubsystem));
