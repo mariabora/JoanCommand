@@ -19,7 +19,6 @@ import frc.robot.commands.StopIntake;
 import frc.robot.commands.StopShooter;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
-import frc.robot.subsystems.OuttakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -49,7 +48,7 @@ public class RobotContainer {
 
   
 
-  private final OuttakeSubsystem m_OuttakeSubsystem = new OuttakeSubsystem();
+ 
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -58,7 +57,6 @@ public class RobotContainer {
     m_driveSubsystem.setDefaultCommand( new JoystickDriveCommand( m_driveSubsystem, m_driveJoystick ));
     m_IntakeSubsystem.setDefaultCommand( new StopIntake(m_IntakeSubsystem));
     m_shooterSubsystem.setDefaultCommand( new StopShooter(m_shooterSubsystem));
-   // m_OuttakeSubsystem.setDefaultCommand( new StopOuttake(m_OuttakeSubsystem));
   
 
     // Configure the button bindings
