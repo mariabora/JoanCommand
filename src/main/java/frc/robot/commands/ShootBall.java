@@ -27,4 +27,15 @@ public class ShootBall extends SequentialCommandGroup {
 
     );
   }
+
+  //public ShootBall( ShooterSubsystem shooterSubsystem) {
+   // m_shooterSubsystem = shooterSubsystem;
+
+    // Add your commands in the addCommands() call, e.g.
+    // addCommands(new FooCommand(), new BarCommand());
+    //addCommands( 
+      //new RunCommand( m_shooterSubsystem::startFlywheel, m_shooterSubsystem ).withTimeout(2),
+      //new RunCommand( m_shooterSubsystem::feedBall, m_shooterSubsystem ).withTimeout(2)
+
+    //);
 }

@@ -63,6 +63,9 @@ public class RobotContainer {
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.whenHeld( new StartIntake(m_IntakeSubsystem)  );
 
+    JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
+    buttonX.whenHeld(new StartIntake(m_IntakeSubsystem));
+
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kB.value);
     buttonB.whenPressed( new ShootBall(m_shooterSubsystem));
 

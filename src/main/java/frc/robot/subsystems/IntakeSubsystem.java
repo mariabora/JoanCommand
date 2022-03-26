@@ -32,8 +32,9 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public void inward(){
-        setSpeed(-1);
+        setSpeed(-0.78);
     }
+
 
     public void raise() {
         m_intakePiston.set(false);

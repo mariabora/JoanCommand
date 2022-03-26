@@ -47,7 +47,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   }
   public void position(double x, double y) {
-    m_drive.arcadeDrive(y, x);
+    m_drive.arcadeDrive(y / 1.5, x / 1.5);
   }
 
   @Override
@@ -66,7 +66,7 @@ public class DriveSubsystem extends SubsystemBase {
       }
 
   public void forwardSlowly() {
-    m_drive.arcadeDrive( .3, 0);
+    m_drive.arcadeDrive( .5, 0);
   }
 
   @Override
@@ -74,3 +74,4 @@ public class DriveSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run during simulation
   }
 }
+                                          
