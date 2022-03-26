@@ -26,10 +26,17 @@ public class ShootBall extends SequentialCommandGroup {
       new RunCommand( m_shooterSubsystem::feedBall, m_shooterSubsystem ).withTimeout(2)
 
     );
+    }
 
+  public void HoldBall( ShooterSubsystem shooterSubsystem) {
+    
+    addCommands(
+       new RunCommand( m_shooterSubsystem::startFlywheelHold, m_shooterSubsystem)
+   );
+
+     }
     }
-    }
-      
+    
     
   
 
