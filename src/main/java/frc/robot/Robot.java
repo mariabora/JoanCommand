@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -16,6 +18,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+ 
 
   private RobotContainer m_robotContainer;
 
@@ -28,6 +31,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    
+   
   }
 
   /**
@@ -81,7 +86,41 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    /*final Joystick m_joystick;
+    CANSparkMax m_left;
+    CANSparkMax m_leftSlave;
+    CANSparkMax m_right;
+    CANSparkMax m_rightSlave;
+    // read PID coefficients from SmartDashboard
+    double p = SmartDashboard.getNumber("P Gain", 0);
+    double i = SmartDashboard.getNumber("I Gain", 0);
+    double d = SmartDashboard.getNumber("D Gain", 0);
+    double iz = SmartDashboard.getNumber("I Zone", 0);
+    double ff = SmartDashboard.getNumber("Feed Forward", 0);
+    double max = SmartDashboard.getNumber("Max Output", 0);
+    double min = SmartDashboard.getNumber("Min Output", 0);
+
+    // if PID coefficients on SmartDashboard have changed, write new values to controller
+    if((p != kP)) { m_pidController.setP(p); kP = p; }
+    if((i != kI)) { m_pidController.setI(i); kI = i; }
+    if((d != kD)) { m_pidController.setD(d); kD = d; }
+    if((iz != kIz)) { m_pidController.setIZone(iz); kIz = iz; }
+    if((ff != kFF)) { m_pidController.setFF(ff); kFF = ff; }
+    if((max != kMaxOutput) || (min != kMinOutput)) { 
+      m_pidController.setOutputRange(min, max); 
+      kMinOutput = min; kMaxOutput = max; 
+    }
+
+    double setPoint = m_joystick.getY()*maxRPM;
+    m_pidController.setReference(setPoint, CANSparkMax.ControlType.kVelocity);
+
+    SmartDashboard.putNumber("SetPoint", setPoint);
+    SmartDashboard.putNumber("ProcessVariable", m_encoder.getVelocity());
+
+    SmartDashboard.putNumber("SetPoint", setPoint);
+    SmartDashboard.putNumber("ProcessVariable", m_encoder.getVelocity());*/
+  }
 
   @Override
   public void testInit() {
