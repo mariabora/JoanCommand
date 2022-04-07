@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ShooterSubsystem extends SubsystemBase {
 
     private VictorSPX m_aimMotor;
-    private static int aimerDeviceID = 1;
+    private static int aimerDeviceID = 3;
     private VictorSPX m_flyWheel;
-    private static int flywheelDeviceID = 3;
+    private static int flywheelDeviceID = 1;
     private VictorSPX m_feederMotor;
     private static int feederDeviceID = 4;
  //encoder???
