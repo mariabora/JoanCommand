@@ -93,7 +93,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   }
   public void position(double x, double y) {
-    m_drive.arcadeDrive(y / 1.5, x / 1.5);
+    m_drive.arcadeDrive(y / 1.2 , x / 1.2);
   }
 
   @Override

@@ -27,6 +27,32 @@ public class StartIntake extends CommandBase {
     m_IntakeSubsystem.inward();
   }
 
+  // Called once the command ends or is interrupted.
+  @Override
+  public void end(boolean interrupted) {}
+
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
+    return false;
+  }
+
+
+
+
+
+
+
+  
+ /*public class StartOuttake extends CommandBase {
+
+  @Override
+  public void initialize() {}
+
+  @Override
+  public void execute() {
+    m_IntakeSubsystem.outward();
+  }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -37,4 +63,6 @@ public class StartIntake extends CommandBase {
   public boolean isFinished() {
     return false;
   }
+*/
 }
+

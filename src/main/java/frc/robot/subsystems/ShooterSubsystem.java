@@ -49,7 +49,7 @@ public class ShooterSubsystem extends SubsystemBase {
         setAim(0);
     }
 
-    public void startFlywheel() {
+    public void startFlywheelShoot() {
         setFlyWheel(0.85);
     }
 
@@ -65,4 +65,10 @@ public class ShooterSubsystem extends SubsystemBase {
         setAim(.3);
     }
 
+    public void startFlywheelHold() {
+        setFlyWheel(0.2);
+
+    }
+
+    
 }

@@ -8,8 +8,17 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.AutoDriveBackwards;
+<<<<<<< HEAD
 import frc.robot.commands.JoystickDriveCommand;
 import frc.robot.commands.ShootBall;
+=======
+
+import frc.robot.commands.HoldBall;
+//import frc.robot.commands.Eject;
+import frc.robot.commands.JoystickDriveCommand;
+import frc.robot.commands.ShootBall;
+//import frc.robot.commands.StartEject;
+>>>>>>> 1e6f70011194095b42e3b3fef771392abce65f9d
 import frc.robot.commands.StartIntake;
 import frc.robot.commands.StopIntake;
 import frc.robot.commands.StopShooter;
@@ -40,13 +49,25 @@ public class RobotContainer {
 
   private final Command m_autoCommand = new AutoDriveBackwards(m_driveSubsystem , m_shooterSubsystem);
 
+<<<<<<< HEAD
+=======
+
+  
+
+ 
+
+
+>>>>>>> 1e6f70011194095b42e3b3fef771392abce65f9d
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
 
     m_driveSubsystem.setDefaultCommand( new JoystickDriveCommand( m_driveSubsystem, m_driveJoystick ));
     m_IntakeSubsystem.setDefaultCommand( new StopIntake(m_IntakeSubsystem));
     m_shooterSubsystem.setDefaultCommand( new StopShooter(m_shooterSubsystem));
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e6f70011194095b42e3b3fef771392abce65f9d
   
 
     // Configure the button bindings
@@ -64,6 +85,17 @@ public class RobotContainer {
     JoystickButton buttonA = new JoystickButton(m_Controller, XboxController.Button.kA.value);
     buttonA.whenHeld( new StartIntake(m_IntakeSubsystem)  );
 
+<<<<<<< HEAD
+=======
+
+    //JoystickButton buttonX = new JoystickButton(m_Controller, XboxController.Button.kX.value);
+    //buttonX.whenHeld(new StartIntake(m_IntakeSubsystem));
+
+    JoystickButton buttonY = new JoystickButton(m_Controller, XboxController.Button.kY.value);
+    buttonY.whenPressed(new HoldBall(m_shooterSubsystem));
+
+
+>>>>>>> 1e6f70011194095b42e3b3fef771392abce65f9d
     JoystickButton buttonB = new JoystickButton(m_Controller, XboxController.Button.kB.value);
     buttonB.whenPressed( new ShootBall(m_shooterSubsystem));
 

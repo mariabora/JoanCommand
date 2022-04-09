@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands;
+/*package frc.robot.commands;
 
 
 
@@ -57,5 +57,4 @@ public class StartEject extends SequentialCommandGroup {
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
 
-  protected void interrupted() {}
-}
+ // protected void interrupted() {}*/
